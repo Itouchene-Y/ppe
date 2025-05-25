@@ -1,6 +1,6 @@
 
 <div id="acceuil">
-    <h1>Bienvenue chez  nous: FROMSOFTWARE !</h1>
+    <h1>Bienvenue chez FROMSOFTWARE !</h1>
 
     <?php
         //include('./parts/search.php');
