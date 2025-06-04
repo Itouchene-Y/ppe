@@ -11,7 +11,7 @@ if ($_SESSION['role'] == "manager") {
 
     echo '<h1> Vos Annonces </h1>';
 
-    foreach ($candidature as $value) {
+    foreach ($getCandidatureByManager as $value) {
         switch ($value['statut']) {
             case 'attente':
                 $sClass = 'attente';
@@ -27,13 +27,6 @@ if ($_SESSION['role'] == "manager") {
         }
 
         $getTitreByCand = $annonce->getTitreByCand($value['idCandidature']);
-        
-        if ($getTitreByCand && $row = $getTitreByCand->fetch(PDO::FETCH_ASSOC)) {
-            $titre = $row['titre'];  // Assuming the column is called 'titre'
-        } else {
-            $titre = 'Titre non trouvé';
-        }
-
         $titre = !empty($getTitreByCand) ? $getTitreByCand[0] : 'Titre non trouvé';
 
         echo '<br><div class="col-8 ' . $sClass . ' candidature">';
@@ -69,7 +62,7 @@ if ($_SESSION['role'] == "manager") {
         echo '</div>';
     }
 
-    foreach ($candidature as $value) {
+    foreach ($getCandidatureByManager as $value) {
         switch ($value['statut']) {
             case 'attente':
                 $sClass = 'attente';
@@ -122,7 +115,7 @@ if ($_SESSION['role'] == "candidat") {
     include_once("./controleur/getSpontanee.php");
     include_once("./controleur/getTitreByCand.php");
 
-    foreach ($candidature as $value) {
+    foreach ($getCandidatureByManager as $value) {
         switch ($value['statut']) {
             case 'attente':
                 $sClass = 'attente';
@@ -138,13 +131,6 @@ if ($_SESSION['role'] == "candidat") {
         }
 
         $getTitreByCand = $annonce->getTitreByCand($value['idCandidature']);
-        
-        if ($getTitreByCand && $row = $getTitreByCand->fetch(PDO::FETCH_ASSOC)) {
-            $titre = $row['titre'];  // Assuming the column is called 'titre'
-        } else {
-            $titre = 'Titre non trouvé';
-        }
-
         $titre = !empty($getTitreByCand) ? $getTitreByCand[0] : 'Titre non trouvé';
 
         echo '<br><div class="col-8 ' . $sClass . ' candidature">';
@@ -177,7 +163,7 @@ if ($_SESSION['role'] == "candidat") {
         echo '</div>';
     }
 
-    foreach ($candidature as $value) {
+    foreach ($getCandidatureByManager as $value) {
         switch ($value['statut']) {
             case 'attente':
                 $sClass = 'attente';
