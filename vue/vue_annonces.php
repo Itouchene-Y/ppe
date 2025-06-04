@@ -27,6 +27,13 @@ if ($_SESSION['role'] == "manager") {
         }
 
         $getTitreByCand = $annonce->getTitreByCand($value['idCandidature']);
+        
+        if ($getTitreByCand && $row = $getTitreByCand->fetch(PDO::FETCH_ASSOC)) {
+            $titre = $row['titre'];  // Assuming the column is called 'titre'
+        } else {
+            $titre = 'Titre non trouvé';
+        }
+
         $titre = !empty($getTitreByCand) ? $getTitreByCand[0] : 'Titre non trouvé';
 
         echo '<br><div class="col-8 ' . $sClass . ' candidature">';
@@ -131,6 +138,13 @@ if ($_SESSION['role'] == "candidat") {
         }
 
         $getTitreByCand = $annonce->getTitreByCand($value['idCandidature']);
+        
+        if ($getTitreByCand && $row = $getTitreByCand->fetch(PDO::FETCH_ASSOC)) {
+            $titre = $row['titre'];  // Assuming the column is called 'titre'
+        } else {
+            $titre = 'Titre non trouvé';
+        }
+
         $titre = !empty($getTitreByCand) ? $getTitreByCand[0] : 'Titre non trouvé';
 
         echo '<br><div class="col-8 ' . $sClass . ' candidature">';
