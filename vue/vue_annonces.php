@@ -7,19 +7,20 @@ if ($_SESSION['role'] == "manager") {
 
     echo '<h1> Vos Annonces </h1>';
 
-    switch ($value['statut']) {
-        case 'attente':
-            $sClass = 'attente';
-            break;
-        case 'valide':
-            $sClass = 'valide';
-            break;
-        case 'refuse':
-            $sClass = 'refuse';
-            break;
-        default:
-            $sClass = '';
-    }
+    foreach ($candidatures as $value) {
+        switch ($value['statut']) {
+            case 'attente':
+                $sClass = 'attente';
+                break;
+            case 'valide':
+                $sClass = 'valide';
+                break;
+            case 'refuse':
+                $sClass = 'refuse';
+                break;
+            default:
+                $sClass = '';
+        }
 
         $getTitreByCand = $annonce->getTitreByCand($value['idCandidature']);
         $titre = !empty($getTitreByCand) ? $getTitreByCand[0] : 'Titre non trouvé';
@@ -57,19 +58,21 @@ if ($_SESSION['role'] == "manager") {
         echo '</div>';
     }
 
-    switch ($value['statut']) {
-        case 'attente':
-            $sClass = 'attente';
-            break;
-        case 'valide':
-            $sClass = 'valide';
-            break;
-        case 'refuse':
-            $sClass = 'refuse';
-            break;
-        default:
-            $sClass = '';
-    }
+    foreach ($candidatures as $value) {
+        switch ($value['statut']) {
+            case 'attente':
+                $sClass = 'attente';
+                break;
+            case 'valide':
+                $sClass = 'valide';
+                break;
+            case 'refuse':
+                $sClass = 'refuse';
+                break;
+            default:
+                $sClass = '';
+        }
+
         echo '<br><div class="col-8 ' . $sClass . ' candidature">';
         echo '<h3> Candidature spontanee n°' . $value['idSpontanee'] . '</h3>';
 
@@ -108,19 +111,20 @@ if ($_SESSION['role'] == "candidat") {
     include_once("./controleur/getSpontanee.php");
     include_once("./controleur/getTitreByCand.php");
 
-    switch ($value['statut']) {
-        case 'attente':
-            $sClass = 'attente';
-            break;
-        case 'valide':
-            $sClass = 'valide';
-            break;
-        case 'refuse':
-            $sClass = 'refuse';
-            break;
-        default:
-            $sClass = '';
-    }
+    foreach ($candidatures as $value) {
+        switch ($value['statut']) {
+            case 'attente':
+                $sClass = 'attente';
+                break;
+            case 'valide':
+                $sClass = 'valide';
+                break;
+            case 'refuse':
+                $sClass = 'refuse';
+                break;
+            default:
+                $sClass = '';
+        }
 
         $getTitreByCand = $annonce->getTitreByCand($value['idCandidature']);
         $titre = !empty($getTitreByCand) ? $getTitreByCand[0] : 'Titre non trouvé';
@@ -154,19 +158,22 @@ if ($_SESSION['role'] == "candidat") {
 
         echo '</div>';
     }
-    switch ($value['statut']) {
-        case 'attente':
-            $sClass = 'attente';
-            break;
-        case 'valide':
-            $sClass = 'valide';
-            break;
-        case 'refuse':
-            $sClass = 'refuse';
-            break;
-        default:
-            $sClass = '';
-    }
+    
+    foreach ($candidatures as $value) {
+        switch ($value['statut']) {
+            case 'attente':
+                $sClass = 'attente';
+                break;
+            case 'valide':
+                $sClass = 'valide';
+                break;
+            case 'refuse':
+                $sClass = 'refuse';
+                break;
+            default:
+                $sClass = '';
+        }
+
         echo '<br><div class="col-8 ' . $sClass . ' candidature">';
         echo '<h3> Candidature spontanee n°' . $value['idSpontanee'] . '</h3>';
 
