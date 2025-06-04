@@ -4,12 +4,7 @@
 
 class Candidature
 {
-<<<<<<< HEAD
 	private $bdd;
-=======
-    private $bdd; // Ajoute cette ligne
-	
->>>>>>> 55c8d90f09d22fcc362297493937528f79d08335
 	function __construct($bdd)
 	{
 		$this->bdd = $bdd;
