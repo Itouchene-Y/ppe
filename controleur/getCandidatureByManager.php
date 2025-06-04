@@ -4,7 +4,7 @@ require_once ("modele/candidatureModel.php");
 require_once("bdd/bdd.php");
 
 
-$candidature = new Candidature($bdd);
+$candidatures = new Candidature($bdd);
 $getCandidatureByManager = $candidature->getCandidatureByManager($_SESSION['id']);
 
 
