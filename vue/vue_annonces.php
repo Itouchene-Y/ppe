@@ -11,7 +11,7 @@ if ($_SESSION['role'] == "manager") {
 
     echo '<h1> Vos Annonces </h1>';
 
-    foreach ($candidatures as $value) {
+    foreach ($candidature as $value) {
         switch ($value['statut']) {
             case 'attente':
                 $sClass = 'attente';
@@ -62,7 +62,7 @@ if ($_SESSION['role'] == "manager") {
         echo '</div>';
     }
 
-    foreach ($candidatures as $value) {
+    foreach ($candidature as $value) {
         switch ($value['statut']) {
             case 'attente':
                 $sClass = 'attente';
@@ -115,7 +115,7 @@ if ($_SESSION['role'] == "candidat") {
     include_once("./controleur/getSpontanee.php");
     include_once("./controleur/getTitreByCand.php");
 
-    foreach ($candidatures as $value) {
+    foreach ($candidature as $value) {
         switch ($value['statut']) {
             case 'attente':
                 $sClass = 'attente';
@@ -163,7 +163,7 @@ if ($_SESSION['role'] == "candidat") {
         echo '</div>';
     }
 
-    foreach ($candidatures as $value) {
+    foreach ($candidature as $value) {
         switch ($value['statut']) {
             case 'attente':
                 $sClass = 'attente';
