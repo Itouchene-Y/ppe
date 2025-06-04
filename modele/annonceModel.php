@@ -2,6 +2,7 @@
 //CRUD
 class Annonce 
 {
+    private $bdd;
 	function __construct($bdd)
 	{
 		$this->bdd = $bdd;
@@ -36,7 +37,7 @@ class Annonce
                 $this->bdd->beginTransaction();
 
                 // Supprimer les candidatures associées à l'annonce
-                $req = $this->bdd->prepare("DELETE FROM candidature WHERE idAnnonce = ?");
+                $req = $this->bdd->prepare("DELETE FROM Candidature WHERE idAnnonce = ?");
                 $req->execute([$idA]);
 
                 // Supprimer l'annonce

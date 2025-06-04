@@ -4,6 +4,7 @@
 
 class Candidature
 {
+    private $bdd; // Ajoute cette ligne
 	
 	function __construct($bdd)
 	{
