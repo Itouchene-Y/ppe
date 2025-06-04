@@ -1,5 +1,9 @@
 <center>
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 if ($_SESSION['role'] == "manager") {
     include_once("./controleur/getCandidatureByManager.php");
     include_once("./controleur/selectAllSpontanee.php");
@@ -158,7 +162,7 @@ if ($_SESSION['role'] == "candidat") {
 
         echo '</div>';
     }
-    
+
     foreach ($candidatures as $value) {
         switch ($value['statut']) {
             case 'attente':
