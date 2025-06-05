@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['location']="http://localhost/Site_Epreuve_E5/";
+$_SESSION['location']="http://172.20.0.47/";
 if(!isset($_SESSION['role'])){
 	$_SESSION['role']="visiteur";
 }
